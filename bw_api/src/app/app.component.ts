@@ -6,5 +6,5 @@ import { Component } from "@angular/core";
     styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-    title = "taime-spa";
+    title = "bw_api-spa";
 }

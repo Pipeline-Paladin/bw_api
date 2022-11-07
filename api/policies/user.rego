@@ -1,4 +1,4 @@
-package taime.auth.user
+package bw_api.auth.user
 
 import future.keywords.in
 
@@ -6,12 +6,12 @@ default allow = false
 
 allow {
     contains(input.path, "/api/user/")
-    "/taimeUser" in token.payload.groups
+    "/bw_apiUser" in token.payload.groups
 }
 
 allow {
     contains(input.path, "/api/user/")
-    "/taimeAdmin" in token.payload.groups
+    "/bw_apiAdmin" in token.payload.groups
 }
 
 token = {"payload": payload} {

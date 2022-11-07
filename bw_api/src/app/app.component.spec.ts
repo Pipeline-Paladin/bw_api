@@ -16,16 +16,16 @@ describe("AppComponent", () => {
         expect(app).toBeTruthy();
     });
 
-    it("should have as title 'taime-spa'", () => {
+    it("should have as title 'bw_api-spa'", () => {
         const fixture = TestBed.createComponent(AppComponent);
         const app = fixture.componentInstance;
-        expect(app.title).toEqual("taime-spa");
+        expect(app.title).toEqual("bw_api-spa");
     });
 
     it("should render title", () => {
         const fixture = TestBed.createComponent(AppComponent);
         fixture.detectChanges();
         const compiled = fixture.nativeElement as HTMLElement;
-        expect(compiled.querySelector(".content span")?.textContent).toContain("taime-spa app is running!");
+        expect(compiled.querySelector(".content span")?.textContent).toContain("bw_api-spa app is running!");
     });
 });

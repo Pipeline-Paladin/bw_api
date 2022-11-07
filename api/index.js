@@ -12,9 +12,9 @@ const keycloakUrl = process.env["KEYCLOAK_URL"];
 console.log(keycloakUrl)
 
 app.use(oauth2.auth({
-    issuerBaseURL: keycloakUrl + "/realms/taime",
-    issuer: keycloakUrl + "/realms/taime",
-    jwksUri: keycloakUrl + "/realms/taime/protocol/openid-connect/certs",
+    issuerBaseURL: keycloakUrl + "/realms/bw_api",
+    issuer: keycloakUrl + "/realms/bw_api",
+    jwksUri: keycloakUrl + "/realms/bw_api/protocol/openid-connect/certs",
     audience: "account"
 }));
 
@@ -22,7 +22,7 @@ app.use("/api/user", userRouter);
 app.use("/api/admin", adminRouter);
 
 userRouter.use(async (req, res, next) => {
-    if(await opa.verify("taime/auth/user", "/api/user/" + req.path, req.auth.token))
+    if(await opa.verify("bw_api/auth/user", "/api/user/" + req.path, req.auth.token))
     {
         next()
     }
@@ -33,7 +33,7 @@ userRouter.use(async (req, res, next) => {
 });
 
 adminRouter.use(async (req, res, next) => {
-    if(await opa.verify("taime/auth/admin", "/api/admin/" + req.path, req.auth.token))
+    if(await opa.verify("bw_api/auth/admin", "/api/admin/" + req.path, req.auth.token))
     {
         next()
     }
@@ -48,7 +48,7 @@ userRouter.get("/", (req, res) => {
 });
 
 userRouter.get("/day", (req, res) => {
-    res.send({status: 200, message: "We think it is Tuesday, with an accuracy of 14.29%."})
+    res.send({status: 200, message: "het is aan het regenen in België"})
 });
 
 adminRouter.get("/", (req, res) => {
@@ -60,7 +60,7 @@ adminRouter.get("/status", (req, res) => {
 });
 
 // Register policies
-opa.register("taime/auth/user", "./policies/user.rego")
-opa.register("taime/auth/admin", "./policies/admin.rego")
+opa.register("bw_api/auth/user", "./policies/user.rego")
+opa.register("bw_api/auth/admin", "./policies/admin.rego")
 
 app.listen(8081);
