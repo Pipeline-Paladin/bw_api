@@ -48,7 +48,7 @@ services:
       OPA_URL: http://opa:8181
 
   frontend:
-    build: ./bw_api
+    build: ./bw-spa
     ports:
       - 4200:4200
 

@@ -1,6 +1,6 @@
 {
   "id": "c103983b-b93d-43ac-84a2-9cbbc6d0dd21",
-  "realm": "bw_api",
+  "realm": "bw-spa",
   "notBefore": 0,
   "defaultSignatureAlgorithm": "RS256",
   "revokeRefreshToken": false,
@@ -56,7 +56,7 @@
       },
       {
         "id": "ae9c7aba-1e3f-40e1-942a-1e25a4a5356c",
-        "name": "default-roles-bw_api",
+        "name": "default-roles-bw-spa",
         "description": "${role_default-roles}",
         "composite": true,
         "composites": {
@@ -298,7 +298,7 @@
           "attributes": {}
         }
       ],
-      "bw_api": [],
+      "bw-spa": [],
       "security-admin-console": [],
       "admin-cli": [],
       "account-console": [],
@@ -397,8 +397,8 @@
   "groups": [
     {
       "id": "1d225b7e-b495-48ef-9977-383348c9abfb",
-      "name": "bw_apiAdmin",
-      "path": "/bw_apiAdmin",
+      "name": "bw-spaAdmin",
+      "path": "/bw-spaAdmin",
       "attributes": {},
       "realmRoles": [],
       "clientRoles": {},
@@ -406,8 +406,8 @@
     },
     {
       "id": "297c68eb-7344-4af8-9551-dc99af479cc4",
-      "name": "bw_apiUser",
-      "path": "/bw_apiUser",
+      "name": "bw-spaUser",
+      "path": "/bw-spaUser",
       "attributes": {},
       "realmRoles": [],
       "clientRoles": {},
@@ -416,7 +416,7 @@
   ],
   "defaultRole": {
     "id": "ae9c7aba-1e3f-40e1-942a-1e25a4a5356c",
-    "name": "default-roles-bw_api",
+    "name": "default-roles-bw-spa",
     "description": "${role_default-roles}",
     "composite": true,
     "clientRole": false,
@@ -483,13 +483,13 @@
       "clientId": "account",
       "name": "${client_account}",
       "rootUrl": "${authBaseUrl}",
-      "baseUrl": "/realms/bw_api/account/",
+      "baseUrl": "/realms/bw-spa/account/",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "redirectUris": [
-        "/realms/bw_api/account/*"
+        "/realms/bw-spa/account/*"
       ],
       "webOrigins": [],
       "notBefore": 0,
@@ -527,13 +527,13 @@
       "clientId": "account-console",
       "name": "${client_account-console}",
       "rootUrl": "${authBaseUrl}",
-      "baseUrl": "/realms/bw_api/account/",
+      "baseUrl": "/realms/bw-spa/account/",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "redirectUris": [
-        "/realms/bw_api/account/*"
+        "/realms/bw-spa/account/*"
       ],
       "webOrigins": [],
       "notBefore": 0,
@@ -696,13 +696,13 @@
       "clientId": "security-admin-console",
       "name": "${client_security-admin-console}",
       "rootUrl": "${authAdminUrl}",
-      "baseUrl": "/admin/bw_api/console/",
+      "baseUrl": "/admin/bw-spa/console/",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "redirectUris": [
-        "/admin/bw_api/console/*"
+        "/admin/bw-spa/console/*"
       ],
       "webOrigins": [
         "+"
@@ -757,8 +757,8 @@
     },
     {
       "id": "657faa4d-8eef-4dee-965a-46a9ee66e438",
-      "clientId": "bw_api",
-      "name": "bw_api",
+      "clientId": "bw-spa",
+      "name": "bw-spa",
       "description": "",
       "rootUrl": "",
       "adminUrl": "",
