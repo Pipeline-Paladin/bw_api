@@ -12,9 +12,9 @@ const keycloakUrl = process.env["KEYCLOAK_URL"];
 console.log(keycloakUrl)
 
 app.use(oauth2.auth({
-    issuerBaseURL: keycloakUrl + "/realms/bw_api",
-    issuer: keycloakUrl + "/realms/bw_api",
-    jwksUri: keycloakUrl + "/realms/bw_api/protocol/openid-connect/certs",
+    issuerBaseURL: keycloakUrl + "/realms/bw-spa",
+    issuer: keycloakUrl + "/realms/bw-spa",
+    jwksUri: keycloakUrl + "/realms/bw-spa/protocol/openid-connect/certs",
     audience: "account"
 }));
 
@@ -22,7 +22,7 @@ app.use("/api/user", userRouter);
 app.use("/api/admin", adminRouter);
 
 userRouter.use(async (req, res, next) => {
-    if(await opa.verify("bw_api/auth/user", "/api/user/" + req.path, req.auth.token))
+    if(await opa.verify("bw-spa/auth/user", "/api/user/" + req.path, req.auth.token))
     {
         next()
     }
@@ -33,7 +33,7 @@ userRouter.use(async (req, res, next) => {
 });
 
 adminRouter.use(async (req, res, next) => {
-    if(await opa.verify("bw_api/auth/admin", "/api/admin/" + req.path, req.auth.token))
+    if(await opa.verify("bw-spa/auth/admin", "/api/admin/" + req.path, req.auth.token))
     {
         next()
     }
@@ -60,7 +60,7 @@ adminRouter.get("/status", (req, res) => {
 });
 
 // Register policies
-opa.register("bw_api/auth/user", "./policies/user.rego")
-opa.register("bw_api/auth/admin", "./policies/admin.rego")
+opa.register("bw-spa/auth/user", "./policies/user.rego")
+opa.register("bw-spa/auth/admin", "./policies/admin.rego")
 
 app.listen(8081);

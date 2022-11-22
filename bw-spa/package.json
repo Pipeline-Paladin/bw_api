@@ -1,5 +1,5 @@
 {
-  "name": "bw_api-spa",
+  "name": "bw-spa",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",

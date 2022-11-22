@@ -1,4 +1,4 @@
-package bw_api.auth.user
+package bw-spa.auth.user
 
 import future.keywords.in
 
@@ -6,12 +6,12 @@ default allow = false
 
 allow {
     contains(input.path, "/api/user/")
-    "/bw_apiUser" in token.payload.groups
+    "/bw-spaUser" in token.payload.groups
 }
 
 allow {
     contains(input.path, "/api/user/")
-    "/bw_apiAdmin" in token.payload.groups
+    "/bw-spaAdmin" in token.payload.groups
 }
 
 token = {"payload": payload} {

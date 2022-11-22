@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "bw_api-spa": {
+    "bw-spa": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/bw_api-spa",
+            "outputPath": "dist/bw-spa",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "bw_api-spa:build:production"
+              "browserTarget": "bw-spa:build:production"
             },
             "development": {
-              "browserTarget": "bw_api-spa:build:development"
+              "browserTarget": "bw-spa:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -75,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "bw_api-spa:build"
+            "browserTarget": "bw-spa:build"
           }
         },
         "test": {

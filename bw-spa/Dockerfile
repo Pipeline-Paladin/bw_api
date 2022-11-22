@@ -14,6 +14,6 @@ RUN find dist/ -type f -print -exec chmod 644 {} +
 FROM nginx:1.21-alpine
 
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY --from=build /build/dist/bw_api /var/www/static/
+COPY --from=build /build/dist/bw-spa /var/www/static/
 
 
