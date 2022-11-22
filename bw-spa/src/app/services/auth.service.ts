@@ -10,8 +10,8 @@ export class AuthService {
 
     constructor() { 
         this.manager = new UserManager({
-            authority: "http://localhost:8080/realms/bw_api",
-            client_id: "bw_api",
+            authority: "http://localhost:8080/realms/bw-spa",
+            client_id: "bw-spa",
             redirect_uri: "http://localhost:4200/signin",
             response_type: 'code',
             scope: "profile email groups",
